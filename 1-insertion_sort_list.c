@@ -5,7 +5,7 @@
 * @list: Double linked list to sort
 * Return: nothing
 */
-void insertion_sort_list(listint_t **list);
+void insertion_sort_list(listint_t **list)
 {
 	listint_t *norm, *bef, *tmp;
 
@@ -13,7 +13,6 @@ void insertion_sort_list(listint_t **list);
 	{
 		return;
 	}
-
 	norm = (*list)->next;
 	while (norm)
 	{
@@ -22,7 +21,9 @@ void insertion_sort_list(listint_t **list);
 		while (bef && bef->n > tmp->n)
 		{
 			if (bef->bef != NULL)
+			{
 				bef->bef->next = tmp;
+			}
 			if (tmp->next != NULL)
 				tmp->next->bef = bef;
 			bef->next = tmp->next;
