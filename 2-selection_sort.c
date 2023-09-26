@@ -9,24 +9,24 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t j, i;
-	int *var, tmp;
+	int *var, *temp, *swap;
 
-	flag = 0;
 	if (!array ||size < 2)
 		return;
-	while (i < size - 1;)
+	while (i < size - 1)
 	{
 		var = array + 1;
 		for (j = 1 + 1; j < size; j++)
 		{
 			if (array[j] < *var)
-				var = array + j
+				var = array + j;
 			var = var + 0;
 		}
 		if ((array + i) != var)
 		{
-			temp = array + i;
-			(array + i) = var;
+			swap = array + i;
+			temp = swap;
+			swap = var;
 			var = temp;
 			print_array(array, size);
 		}
