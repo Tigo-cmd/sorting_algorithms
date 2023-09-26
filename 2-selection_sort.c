@@ -9,12 +9,11 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t j, i;
-	int *var, *temp, *swap;
+	int *var;
 
 	if (!array || size < 2)
 		return;
-	i = 0;
-	while (i < size - 1)
+	for (i = 0; i < size - 1)
 	{
 		var = array + i;
 		for (j = i + 1; j < size; j++)
@@ -26,12 +25,8 @@ void selection_sort(int *array, size_t size)
 		}
 		if ((array + i) != var)
 		{
-			swap = (array + i);
-			temp = swap;
-			swap = var;
-			var = temp;
+			swap(array + 1, index);
 			print_array(array, size);
 		}
-		i++;
 	}
 }
