@@ -1,13 +1,16 @@
 #include "sort.h"
 /**
-* swap.c - 
-* @param
-* @param
+* swap.c - swaps two integers passed
+* @a: first param
+* @b: second param
 *
-* Decsription: 
-* Return: Always(0) success
+* Return: Nothing
 */
 void swap(int *a, int *b);
 {
-	
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
