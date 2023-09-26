@@ -13,6 +13,7 @@ void selection_sort(int *array, size_t size)
 
 	if (!array ||size < 2)
 		return;
+	i = 0;
 	while (i < size - 1)
 	{
 		var = array + 1;
