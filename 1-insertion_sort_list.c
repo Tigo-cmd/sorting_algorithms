@@ -16,24 +16,24 @@ void insertion_sort_list(listint_t **list)
 	norm = (*list)->next;
 	while (norm)
 	{
-		bef =  norm->bef;
+		bef =  norm->prev;
 		tmp = norm;
 		while (bef && bef->n > tmp->n)
 		{
-			if (bef->bef != NULL)
+			if (bef->prev != NULL)
 			{
-				bef->bef->next = tmp;
+				bef->prev->next = tmp;
 			}
 			if (tmp->next != NULL)
-				tmp->next->bef = bef;
+				tmp->next->prev = bef;
 			bef->next = tmp->next;
-			tmp->bef = bef->bef;
+			tmp->prev = bef->prev;
 			tmp->next = bef;
-			bef->bef = tmp;
-			if (tmp->bef == NULL)
+			bef->prev = tmp;
+			if (tmp->prev == NULL)
 				*list = tmp;
 			print_list((const listint_t *)*list);
-			bef = tmp->bef;
+			bef = tmp->prev;
 		}
 		norm = norm->next;
 	}
