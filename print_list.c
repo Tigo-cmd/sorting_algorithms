@@ -1,13 +1,21 @@
 #include "sort.h"
 /**
-* print_list.c - 
-* @param
-* @param
+* print_array - Prints an array of integers
 *
-* Decsription: 
-* Return: Always(0) success
+* @array: The array to be printed
+* @size: Number of elements in @array
 */
-void print_list(const listint_t *list);
+void print_array(const int *array, size_t size)
 {
-	
+	size_t i;
+
+	i = 0;
+	while (array && i < size)
+	{
+		if (i > 0)
+		printf(", ");
+		printf("%d", array[i]);
+		++i;
+	}
+	printf("\n");
 }
