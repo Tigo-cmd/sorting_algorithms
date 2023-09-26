@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
-* swap.c - swaps two integers passed
+* swap - swaps two integers passed
 * @a: first param
 * @b: second param
 *
