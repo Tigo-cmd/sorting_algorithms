@@ -17,7 +17,7 @@ void *_malloc_2(unsigned int element, unsigned int size)
 	if (size == 0)
 		return ('\0');
 	call = malloc(element * size);
-	if (call == '\0')
+	if (call == NULL)
 		return ('\0');
 	while (i < (element * size))
 	{
@@ -34,7 +34,7 @@ void *_malloc_2(unsigned int element, unsigned int size)
 *
 * Return: Nothing
 */
-void counting_sort(int *array, size_t size);
+void counting_sort(int *array, size_t size)
 {
 	int i, max, *count, *temp;
 	size_t j;
@@ -49,7 +49,7 @@ void counting_sort(int *array, size_t size);
 	while (j < size)
 	{
 		if (array[j] > max)
-			max = array[i];
+			max = array[j];
 		j++;
 	}
 	count = _malloc_2(max + 1, sizeof(int));
@@ -67,11 +67,9 @@ void counting_sort(int *array, size_t size);
 		temp[count[array[j]] - 1] = array[j];
 		count[array[j]] = count[array[i]] - 1;
 		j++;
-
 	}
 	for (j = 0; j < size; j++)
 		array[j] = temp[j];
 	free(temp);
 	free(count);
-}
 }
